@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../Udemy_Course/day-19/.idea/day-19.iml" filepath="$PROJECT_DIR$/../Udemy_Course/day-19/.idea/day-19.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/snake_game.iml" filepath="$PROJECT_DIR$/.idea/snake_game.iml" />
     </modules>
   </component>

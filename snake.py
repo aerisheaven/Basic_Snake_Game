@@ -30,6 +30,13 @@ class Snake:
             snake.setpos(self.snake_body[len(self.snake_body)-1].pos())
             self.snake_body.append(snake)
 
+    def reset(self):
+        for item in self.snake_body:
+            item.goto(700, 700)
+        self.snake_body.clear()
+        self.create_snake(True)
+        self.head = self.snake_body[0]
+
     def move(self):
         for snake in range(len(self.snake_body) - 1, 0, -1):
             move_to = self.snake_body[snake - 1].pos()

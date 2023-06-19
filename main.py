@@ -4,6 +4,7 @@ from snake import Snake
 from food import Food
 from score import Score
 import time
+import keyboard
 
 
 screen = Screen()
@@ -35,12 +36,21 @@ while snake_alive:
         snake.create_snake(False)
 
     if snake.head.xcor() > 285 or snake.head.xcor() < -285 or snake.head.ycor() > 285 or snake.head.ycor() < -285:
-        scoreboard.game_over()
-        snake_alive = False
+        scoreboard.reset()
+        snake.reset()
+        food.generate_food()
+        # scoreboard.game_over()
+        # snake_alive = False
 
     for segment in snake.snake_body[1:]:
         if snake.head.distance(segment) < 10:
-            scoreboard.game_over()
-            snake_alive = False
+            scoreboard.reset()
+            snake.reset()
+            food.generate_food()
+            # scoreboard.game_over()
+            # snake_alive = False
+
+    if keyboard.is_pressed("Escape"):
+        screen.bye()
 
 screen.exitonclick()
